@@ -1,0 +1,85 @@
+<html>
+<head>
+    <title>Create Form</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .jumbotron{
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSKcVUyJ0ka1pxbvKzHgzV6-FLW7X8P9nR4EIZ1L5PC9u-d37UU");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: white;
+            margin-top: 30px;
+            margin-left: 300px;
+            margin-right: 200px;
+
+        }
+        body{
+            font-family: cursive;
+            background-image:url("https://images.pexels.com/photos/1363876/pexels-photo-1363876.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h3{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="contanier">
+    <div class="jumbotron">
+        <div class="container">
+    <div class="row">
+        <div class="offset-md-2 col-md-8">
+            <form method="POST">
+                {% csrf_token %}
+                <h3 style="color: red">Please Enter Product Details...</h3><br>
+
+                <label>Enter Product ID</label>
+                <input type="number" name="product_id" class="form-control" required>
+
+                <label>Enter Product Name</label>
+                <input type="text" name="product_name" class="form-control">
+
+                <label>Enter Product Cost</label>
+                <input type="number" name="product_cost" class="form-control">
+
+                <label>Enter Product Class</label>
+                <input type="text" name="product_class" class="form-control">
+
+                <label>Enter Number Of Products</label>
+                <input type="number" name="no_of_products" class="form-control">
+
+                <label>Enter Manufacture Date</label>
+                <input type="date" name="manufacture_date" class="form-control" >
+
+                <label>Enter Expiry Date</label>
+                <input type="date" name="expiry_date" class="form-control">
+
+                <label>Enter Customer Name</label>
+                <input type="text" name="customer_name" class="form-control">
+
+                <label>Enter Mobile Number</label>
+                <input type="number" name="mobile" class="form-control">
+
+                <label>Enter Email ID</label>
+                <input type="email" name="email" class="form-control">
+                <br>
+                <center>
+                    <input type="submit" value="Insert" class="btn btn-success">
+                    <input type="reset" value="clear" class="btn btn-danger"><br><br>
+                    <u><a  href="/#/">Go To Home Page</a></u>
+                </center>
+            </form>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+</body>
+</html>

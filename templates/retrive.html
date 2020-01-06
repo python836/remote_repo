@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title>Retrive Form</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .jumbotron{
+            background-color: aliceblue;
+            border: green solid 5px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+        }
+        table,th,td{
+            border: 1px solid black;
+            text-align: center;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        thead{
+            background-color: red;
+            color: white;
+        }
+        body{
+            background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJkA9QMBIgACEQEDEQH/xAAZAAADAQEBAAAAAAAAAAAAAAAAAQIEAwb/xAAeEAEBAQEAAwEBAQEAAAAAAAAAARESAgMTYVEhMf/EABcBAQEBAQAAAAAAAAAAAAAAAAABAgP/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAMAwEAAhEDEQA/APb8jlo4g4jvXJn5HLRxBxCjPyOWjiDiFGfkctHEPgozcnPBo+ap6yjN81T1tM9a564lIy/M/m1fOH84UjJPWL62z5wfOFIx/Mr6m35wvnCkYr6yvrbL64V9ZSMXzK+DZfWi+taMvI5aeC4hRn5HLRxBxCjPyOWjiDiFGfkctHEHEKM/IaOICjvyOXTBiVXPkcumDCjnyOXTBiDnyrhc8VzxBznguetfj4rkBznrVPBeGio5hcugBz5HLoAc+Ry6AHPgr4OpYDjfBN9bRibBGa+Cb4NNiL4qOHI5dbCxaOfI5dMGFHPkcumDCjnyHTAUXgxeDEEYMXgwEYMXgkApFzxOeK5EUpDkVgAsGGMCFgxWDkInBiuRyETgxXIwInBisLAhYWKARzsRfF2sTYDhYWOticERgxeDFEYMXgwEYF4AVgxWDEVODFYMBOf6qQ5FSAJFSCReIsTgw8OQE4eKniqQETxPleHgI5HK8GA53xHLpgwHLksdbCviDlgxdhUEWFYvBYpHGxNjrYmwRzwYrBgJwYrBgJwKwAvBisGIsTgxWDFImRUhyKkQEhnIYFhyHipBSkNWFiBGMGAAMGACPBgEDw8BzsTY6psURhYsgc7E2OlibBI52DFUYETgxWDAicCsCkVgxeDEEYMXgwEyKkEipAEh4cORFGHIZ4ABhAgYAgYAgYAgYAsTYsquDnYS8IEWIsdKVio52FixgIwYvBgIw1YAXgxWDEE4MVgwE4Z4MFEOCKkA5DwQ8QIHgwCB4MAgeDAIHgwCB4MAhh4MBFmJdMTVEVNi8LATgxWDBE4MVgwE4FYYKwYrBgqcGKwYCcGKwYCTPDxNBFFFAQMwSFAEgx/gEFf4P8BIV/hf4BEqlgJTV4WAjBisGKJwYrBgJwYrBgJwl4AZvrf6Prf6y9jtYzWr63+j63+svY7IVr+l/o+l/rL3B3CFavpf6Prf6y9wdwWtk9n6uez9YZ7FT2C1unn+n3+snj7IuebI0dfo6/XCeZ9wg7dfpzycO4O4sHfsduHcHaDv2XTh2V9gO98/1N9n6z32Ivt/Vg032X+l9L/WX6fo7/Vg1fS/0fS/1l7/AEdkStX0v9H0/WXv9HZCtX0/R9P1l7/R2QrX9P0Mn0BCsX0H0ZQ0y1/QfRlgWDV9B9GUQg1fQfRmE/6QavoPozHCDX4+108fawx18WYNk9ivoyRUFaex9HAyFdvoL7HClQrtfYi+1xqPIHW+1P0cr/0lR27PtwCDv2O3AKO/Y7cAg79jtxAO3YcQD//Z");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: cursive;
+        }
+        h1{
+            color: red;
+        }
+        a{
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+{% if pdata %}
+<center>
+    <h1>Product Details...</h1>
+<div class="jumbotron">
+    <table cellpadding="5">
+        <thead>
+        <tr>
+            <th>Product_Id</th>
+            <th>Product_Name</th>
+            <th>Product_Cost</th>
+            <th>Product_Class</th>
+            <th>No_Of_Products</th>
+            <th>Customer_Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Manufacture_Date</th>
+            <th>Expiry_Date</th>
+        </tr>
+        </thead>
+        {% for i in pdata %}
+        <tbody>
+        <tr>
+        <td>{{ i.product_id }}</td>
+        <td>{{ i.product_name }}</td>
+        <td>{{ i.product_cost }}</td>
+        <td>{{ i.product_class }}</td>
+        <td>{{ i.no_of_products }}</td>
+        <td>{{ i.customer_name }}</td>
+        <td>{{ i.mobile}}</td>
+        <td>{{ i.email}}</td>
+        <td>{{ i.manufacture_date}}</td>
+        <td>{{ i.expiry_date}}</td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+</center>
+{% else %}
+<h2>Products are not availabel</h2>
+{% endif %}
+<center>
+    <div>
+        <a  href="/#/">Go To Home Page</a>
+    </div>
+</center>
+</body>
+</html>
